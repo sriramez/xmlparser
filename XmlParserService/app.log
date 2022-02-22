@@ -87,3 +87,19 @@
 2022-02-22 19:59:28,079 DEBUG com.service.XmlParserServiceTest [main] Running with Spring Boot v2.6.3, Spring v5.3.15
 2022-02-22 19:59:28,079 INFO com.service.XmlParserServiceTest [main] The following profiles are active: test
 2022-02-22 19:59:29,966 INFO com.service.XmlParserServiceTest [main] Started XmlParserServiceTest in 2.169 seconds (JVM running for 3.101)
+2022-02-22 20:14:57,217 INFO com.service.XmlParserServiceApplication [restartedMain] Starting XmlParserServiceApplication using Java 17.0.1 on WORKSTATION with PID 11320 (C:\Users\sriram\Documents\workspace-spring-tool-suite-4-4.13.0.RELEASE\XmlParserService\target\classes started by sriram in C:\Users\sriram\Documents\workspace-spring-tool-suite-4-4.13.0.RELEASE\XmlParserService)
+2022-02-22 20:14:57,218 DEBUG com.service.XmlParserServiceApplication [restartedMain] Running with Spring Boot v2.6.3, Spring v5.3.15
+2022-02-22 20:14:57,218 INFO com.service.XmlParserServiceApplication [restartedMain] No active profile set, falling back to default profiles: default
+2022-02-22 20:14:58,247 INFO org.apache.catalina.core.StandardService [restartedMain] Starting service [Tomcat]
+2022-02-22 20:14:58,247 INFO org.apache.catalina.core.StandardEngine [restartedMain] Starting Servlet engine: [Apache Tomcat/9.0.56]
+2022-02-22 20:14:58,321 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [restartedMain] Initializing Spring embedded WebApplicationContext
+2022-02-22 20:14:59,160 INFO com.service.XmlParserServiceApplication [restartedMain] Started XmlParserServiceApplication in 2.237 seconds (JVM running for 2.916)
+2022-02-22 21:26:08,571 INFO com.service.XmlParserServiceApplication [restartedMain] Starting XmlParserServiceApplication using Java 17.0.1 on WORKSTATION with PID 6884 (C:\Users\sriram\Documents\workspace-spring-tool-suite-4-4.13.0.RELEASE\XmlParserService\target\classes started by sriram in C:\Users\sriram\Documents\workspace-spring-tool-suite-4-4.13.0.RELEASE\XmlParserService)
+2022-02-22 21:26:08,572 DEBUG com.service.XmlParserServiceApplication [restartedMain] Running with Spring Boot v2.6.3, Spring v5.3.15
+2022-02-22 21:26:08,573 INFO com.service.XmlParserServiceApplication [restartedMain] No active profile set, falling back to default profiles: default
+2022-02-22 21:26:09,963 INFO org.apache.catalina.core.StandardService [restartedMain] Starting service [Tomcat]
+2022-02-22 21:26:09,964 INFO org.apache.catalina.core.StandardEngine [restartedMain] Starting Servlet engine: [Apache Tomcat/9.0.56]
+2022-02-22 21:26:10,055 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [restartedMain] Initializing Spring embedded WebApplicationContext
+2022-02-22 21:26:11,214 INFO com.service.XmlParserServiceApplication [restartedMain] Started XmlParserServiceApplication in 3.169 seconds (JVM running for 4.336)
+2022-02-22 21:26:25,170 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [http-nio-8080-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-02-22 21:26:26,157 INFO org.springdoc.api.AbstractOpenApiResource [http-nio-8080-exec-6] Init duration for springdoc-openapi is: 271 ms

@@ -26,8 +26,8 @@ import com.service.exception.XmlAddExployeeException;
 import com.service.exception.XmlReadException;
 import com.service.exception.XmlRemoveEmployeeException;
 import com.service.exception.XmlValidationException;
-import com.service.services.FileStorageService;
-import com.service.services.XMLParserService;
+import com.service.services.impl.FileStorageServiceImpl;
+import com.service.services.impl.XMLParserServiceImpl;
 
 import redis.clients.jedis.JedisPool;
 import xmlparser.XmlValidatorUtil;
@@ -38,10 +38,10 @@ import xmlparser.XmlValidatorUtil;
 public class XmlParserServiceTest {
 
 	@Autowired
-	XMLParserService service;
+	XMLParserServiceImpl service;
 
 	@Autowired
-	FileStorageService fileService;
+	FileStorageServiceImpl fileService;
 
 	@Autowired
 	JedisPool pool;

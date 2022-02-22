@@ -1,12 +1,9 @@
 package com.service.controller;
 
 import java.io.File;
-import java.io.FileOutputStream;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 
-import javax.xml.parsers.ParserConfigurationException;
-import javax.xml.transform.TransformerException;
 
 import org.apache.commons.io.FileUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,8 +22,8 @@ import com.service.exception.XmlAddExployeeException;
 import com.service.exception.XmlReadException;
 import com.service.exception.XmlValidationException;
 import com.service.exception.XmlWriteException;
-import com.service.services.FileStorageService;
-import com.service.services.XMLParserService;
+import com.service.services.impl.FileStorageServiceImpl;
+import com.service.services.impl.XMLParserServiceImpl;
 
 import xmlparser.XmlValidatorUtil;
 
@@ -34,10 +31,10 @@ import xmlparser.XmlValidatorUtil;
 public class XMLParserController {
 
 	@Autowired
-	XMLParserService service;
+	XMLParserServiceImpl service;
 
 	@Autowired
-	FileStorageService fileStorage;
+	FileStorageServiceImpl fileStorage;
 
 	@PostMapping(path = "employee", consumes = MediaType.MULTIPART_FORM_DATA_VALUE, produces = MediaType.APPLICATION_XML_VALUE)
 	public String readXMLFile(@RequestParam("file") MultipartFile file, @RequestParam String key)
