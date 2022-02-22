@@ -4,7 +4,6 @@ import java.io.File;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 
-
 import org.apache.commons.io.FileUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
@@ -24,6 +23,8 @@ import com.service.exception.XmlValidationException;
 import com.service.exception.XmlWriteException;
 import com.service.services.impl.FileStorageServiceImpl;
 import com.service.services.impl.XMLParserServiceImpl;
+import com.service.services.interfaces.FileStorageService;
+import com.service.services.interfaces.XmlParserService;
 
 import xmlparser.XmlValidatorUtil;
 
@@ -31,10 +32,10 @@ import xmlparser.XmlValidatorUtil;
 public class XMLParserController {
 
 	@Autowired
-	XMLParserServiceImpl service;
+	XmlParserService service;
 
 	@Autowired
-	FileStorageServiceImpl fileStorage;
+	FileStorageService fileStorage;
 
 	@PostMapping(path = "employee", consumes = MediaType.MULTIPART_FORM_DATA_VALUE, produces = MediaType.APPLICATION_XML_VALUE)
 	public String readXMLFile(@RequestParam("file") MultipartFile file, @RequestParam String key)
