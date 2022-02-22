@@ -1,5 +1,5 @@
 
-XMLParser:
+**XMLParser:**
 
 XMLParser Project is a library which contains methods to read a xml file to string , add new nodes , remove nodes based on parameter and also write file to a directory.
 The above mentioned functionalities are achived using XmlUtil.
@@ -10,7 +10,8 @@ The Validation is done using an xsd file which is passed as input with XmlValida
 The setValidator method can be called again and again to update the xsd file.
 The XmlValidatorUtil.validate() method is used to validate the xml file against the xsd file which returns true is valid and false if invalid.
 
-XML Parser service:
+**XML Parser service:**
+
 
 The xml parser service uses Redis Cache as backend storage.
 
