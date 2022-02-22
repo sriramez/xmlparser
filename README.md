@@ -13,7 +13,7 @@ The XmlValidatorUtil.validate() method is used to validate the xml file against 
 **XML Parser service:**
 
 
-The xml parser service uses Redis Cache as backend storage.
+The xml parser service uses Redis Cache as backend storage.This approach is used so even when the application is scaled up or down the data can be stored in a centralized server. And also the output is returned in API form and also as xml file format.
 
 The connection properties are found in application.properties.
 
