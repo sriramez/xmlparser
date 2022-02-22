@@ -17,6 +17,7 @@ import com.service.exception.XmlAddExployeeException;
 import com.service.exception.XmlReadException;
 import com.service.exception.XmlValidationException;
 import com.service.exception.XmlWriteException;
+import com.service.services.interfaces.FileStorageService;
 import com.service.services.interfaces.XmlParserService;
 
 import redis.clients.jedis.JedisPool;
@@ -30,7 +31,7 @@ public class XMLParserServiceImpl implements XmlParserService{
 	JedisPool pool;
 
 	@Autowired
-	FileStorageServiceImpl service;
+	FileStorageService service;
 
 	private static final Logger logger = LoggerFactory.getLogger(XMLParserServiceImpl.class);
 
