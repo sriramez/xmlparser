@@ -21,6 +21,8 @@ xmlservice.storage.path=D:/temp
 
 The above mentioned property in application properties is where the files will be stored.
 
+Once The application is started first .xsd file should be uploaded using the /validator API else other operations can be performed.
+
 The XmlParserService consists of 5 APIs.
 
 ![image](https://user-images.githubusercontent.com/18284660/155158837-88c3944e-02cd-4f2c-bd40-b660cdb9f7aa.png)
