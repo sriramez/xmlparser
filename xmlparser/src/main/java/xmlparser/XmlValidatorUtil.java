@@ -32,21 +32,31 @@ public class XmlValidatorUtil {
 	}
 
 	public static boolean validate(String xmlPath) {
+		boolean toRet = false;
 		try {
-			validator.validate(new StreamSource(new File(xmlPath)));
-			return true;
+			if (validator != null) {
+				validator.validate(new StreamSource(new File(xmlPath)));
+				toRet = true;
+			}
+
 		} catch (SAXException | IOException e) {
-			return false;
+			return toRet;
 		}
+		return toRet;
 	}
 
 	public static boolean validateContents(String contents) {
+		boolean toRet = false;
 		try {
-			validator.validate(new StreamSource(new StringReader(contents)));
-			return true;
+			if (validator != null) {
+				validator.validate(new StreamSource(new StringReader(contents)));
+				toRet = true;
+			}
+
 		} catch (SAXException | IOException e) {
 			return false;
 		}
+		return toRet;
 	}
 
 }

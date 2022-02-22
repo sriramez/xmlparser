@@ -133,8 +133,7 @@ public class XmlUtil {
 			for (int j = 0; j < item.getChildNodes().getLength(); j++) {
 
 				if (item.getChildNodes().item(j).getNodeType() == Node.ELEMENT_NODE) {
-
-					if (item.getChildNodes().item(j).getNodeName() == param
+					if (item.getChildNodes().item(j).getNodeName().equals(param)
 							&& item.getChildNodes().item(j).getTextContent().equals(value)) {
 						itemsToRemove.add(item);
 					}
