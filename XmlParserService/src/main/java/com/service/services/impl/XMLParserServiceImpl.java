@@ -120,6 +120,8 @@ public class XMLParserServiceImpl implements XmlParserService {
 		String validatorContents = "";
 		try {
 			validatorContents = FileUtils.readFileToString(new File(absolutePath), StandardCharsets.UTF_8);
+			redis.opsForHash().put(APP_KEY, key + "_validator", validatorContents);
+			;
 			redis.convertAndSend("validators",
 					mapper.writeValueAsString(new RedisMessageModel(key, validatorContents)));
 		} catch (IOException e) {

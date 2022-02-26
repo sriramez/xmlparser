@@ -1,0 +1,179 @@
+2022-02-26 08:12:46,641 INFO com.service.XmlParserServiceApplication [restartedMain] Starting XmlParserServiceApplication using Java 17.0.1 on WORKSTATION with PID 5388 (D:\Projects\xmlparser\XmlParserService\target\classes started by sriram in D:\Projects\xmlparser\XmlParserService)
+2022-02-26 08:12:46,642 DEBUG com.service.XmlParserServiceApplication [restartedMain] Running with Spring Boot v2.6.3, Spring v5.3.15
+2022-02-26 08:12:46,642 INFO com.service.XmlParserServiceApplication [restartedMain] No active profile set, falling back to default profiles: default
+2022-02-26 08:12:47,625 INFO org.apache.catalina.core.StandardService [restartedMain] Starting service [Tomcat]
+2022-02-26 08:12:47,625 INFO org.apache.catalina.core.StandardEngine [restartedMain] Starting Servlet engine: [Apache Tomcat/9.0.56]
+2022-02-26 08:12:47,677 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [restartedMain] Initializing Spring embedded WebApplicationContext
+2022-02-26 08:12:47,721 INFO org.apache.catalina.core.StandardService [restartedMain] Stopping service [Tomcat]
+2022-02-26 08:12:47,751 ERROR org.springframework.boot.diagnostics.LoggingFailureAnalysisReporter [restartedMain] 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+The dependencies of some of the beans in the application context form a cycle:
+
+┌─────┐
+|  redisConfiguration (field java.util.Map com.service.configuration.RedisConfiguration.validators)
+↑     ↓
+|  validatorConfiguration (field org.springframework.data.redis.core.RedisTemplate com.service.configuration.ValidatorConfiguration.redis)
+└─────┘
+
+
+Action:
+
+Relying upon circular references is discouraged and they are prohibited by default. Update your application to remove the dependency cycle between beans. As a last resort, it may be possible to break the cycle automatically by setting spring.main.allow-circular-references to true.
+
+2022-02-26 08:21:52,062 INFO com.service.XmlParserServiceApplication [restartedMain] Starting XmlParserServiceApplication using Java 17.0.1 on WORKSTATION with PID 2772 (D:\Projects\xmlparser\XmlParserService\target\classes started by sriram in D:\Projects\xmlparser\XmlParserService)
+2022-02-26 08:21:52,063 DEBUG com.service.XmlParserServiceApplication [restartedMain] Running with Spring Boot v2.6.3, Spring v5.3.15
+2022-02-26 08:21:52,063 INFO com.service.XmlParserServiceApplication [restartedMain] No active profile set, falling back to default profiles: default
+2022-02-26 08:21:53,071 INFO org.apache.catalina.core.StandardService [restartedMain] Starting service [Tomcat]
+2022-02-26 08:21:53,071 INFO org.apache.catalina.core.StandardEngine [restartedMain] Starting Servlet engine: [Apache Tomcat/9.0.56]
+2022-02-26 08:21:53,122 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [restartedMain] Initializing Spring embedded WebApplicationContext
+2022-02-26 08:21:53,162 INFO org.apache.catalina.core.StandardService [restartedMain] Stopping service [Tomcat]
+2022-02-26 08:21:53,190 ERROR org.springframework.boot.diagnostics.LoggingFailureAnalysisReporter [restartedMain] 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+The dependencies of some of the beans in the application context form a cycle:
+
+┌─────┐
+|  redisConfiguration (field java.util.Map com.service.configuration.RedisConfiguration.validators)
+↑     ↓
+|  validatorConfiguration (field org.springframework.data.redis.core.RedisTemplate com.service.configuration.ValidatorConfiguration.redis)
+└─────┘
+
+
+Action:
+
+Relying upon circular references is discouraged and they are prohibited by default. Update your application to remove the dependency cycle between beans. As a last resort, it may be possible to break the cycle automatically by setting spring.main.allow-circular-references to true.
+
+2022-02-26 08:22:11,760 INFO com.service.XmlParserServiceApplication [restartedMain] Starting XmlParserServiceApplication using Java 17.0.1 on WORKSTATION with PID 9400 (D:\Projects\xmlparser\XmlParserService\target\classes started by sriram in D:\Projects\xmlparser\XmlParserService)
+2022-02-26 08:22:11,762 DEBUG com.service.XmlParserServiceApplication [restartedMain] Running with Spring Boot v2.6.3, Spring v5.3.15
+2022-02-26 08:22:11,762 INFO com.service.XmlParserServiceApplication [restartedMain] No active profile set, falling back to default profiles: default
+2022-02-26 08:22:12,711 INFO org.apache.catalina.core.StandardService [restartedMain] Starting service [Tomcat]
+2022-02-26 08:22:12,711 INFO org.apache.catalina.core.StandardEngine [restartedMain] Starting Servlet engine: [Apache Tomcat/9.0.56]
+2022-02-26 08:22:12,762 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [restartedMain] Initializing Spring embedded WebApplicationContext
+2022-02-26 08:22:12,804 INFO org.apache.catalina.core.StandardService [restartedMain] Stopping service [Tomcat]
+2022-02-26 08:22:12,842 ERROR org.springframework.boot.SpringApplication [restartedMain] Application run failed
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'redisConfiguration': Unsatisfied dependency expressed through field 'validators'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'validatorConfiguration': Unsatisfied dependency expressed through field 'validators'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'java.util.Map<java.lang.String, xmlparser.XMLValidator>' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:659)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:639)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:119)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:399)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1431)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:619)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:953)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:918)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:145)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:732)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:414)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:302)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1303)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1292)
+	at com.service.XmlParserServiceApplication.main(XmlParserServiceApplication.java:12)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49)
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'validatorConfiguration': Unsatisfied dependency expressed through field 'validators'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'java.util.Map<java.lang.String, xmlparser.XMLValidator>' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:659)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:639)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:119)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:399)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1431)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:619)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:410)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1352)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1195)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1389)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1309)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:656)
+	... 25 common frames omitted
+Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'java.util.Map<java.lang.String, xmlparser.XMLValidator>' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.raiseNoMatchingBeanFound(DefaultListableBeanFactory.java:1799)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1355)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1309)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:656)
+	... 48 common frames omitted
+2022-02-26 08:22:48,715 INFO com.service.XmlParserServiceApplication [restartedMain] Starting XmlParserServiceApplication using Java 17.0.1 on WORKSTATION with PID 10288 (D:\Projects\xmlparser\XmlParserService\target\classes started by sriram in D:\Projects\xmlparser\XmlParserService)
+2022-02-26 08:22:48,715 DEBUG com.service.XmlParserServiceApplication [restartedMain] Running with Spring Boot v2.6.3, Spring v5.3.15
+2022-02-26 08:22:48,715 INFO com.service.XmlParserServiceApplication [restartedMain] No active profile set, falling back to default profiles: default
+2022-02-26 08:22:49,785 INFO org.apache.catalina.core.StandardService [restartedMain] Starting service [Tomcat]
+2022-02-26 08:22:49,785 INFO org.apache.catalina.core.StandardEngine [restartedMain] Starting Servlet engine: [Apache Tomcat/9.0.56]
+2022-02-26 08:22:49,838 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [restartedMain] Initializing Spring embedded WebApplicationContext
+2022-02-26 08:22:49,899 INFO org.apache.catalina.core.StandardService [restartedMain] Stopping service [Tomcat]
+2022-02-26 08:22:49,937 ERROR org.springframework.boot.diagnostics.LoggingFailureAnalysisReporter [restartedMain] 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+The dependencies of some of the beans in the application context form a cycle:
+
+┌──->──┐
+|  redisConfiguration
+└──<-──┘
+
+
+Action:
+
+Relying upon circular references is discouraged and they are prohibited by default. Update your application to remove the dependency cycle between beans. As a last resort, it may be possible to break the cycle automatically by setting spring.main.allow-circular-references to true.
+
+2022-02-26 08:26:14,880 INFO com.service.XmlParserServiceApplication [restartedMain] Starting XmlParserServiceApplication using Java 17.0.1 on WORKSTATION with PID 10492 (D:\Projects\xmlparser\XmlParserService\target\classes started by sriram in D:\Projects\xmlparser\XmlParserService)
+2022-02-26 08:26:14,880 DEBUG com.service.XmlParserServiceApplication [restartedMain] Running with Spring Boot v2.6.3, Spring v5.3.15
+2022-02-26 08:26:14,881 INFO com.service.XmlParserServiceApplication [restartedMain] No active profile set, falling back to default profiles: default
+2022-02-26 08:26:15,929 INFO org.apache.catalina.core.StandardService [restartedMain] Starting service [Tomcat]
+2022-02-26 08:26:15,929 INFO org.apache.catalina.core.StandardEngine [restartedMain] Starting Servlet engine: [Apache Tomcat/9.0.56]
+2022-02-26 08:26:15,983 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [restartedMain] Initializing Spring embedded WebApplicationContext
+2022-02-26 08:26:17,113 INFO com.service.XmlParserServiceApplication [restartedMain] Started XmlParserServiceApplication in 2.583 seconds (JVM running for 3.368)
+2022-02-26 08:26:27,960 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [http-nio-8080-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-02-26 08:26:28,610 INFO org.springdoc.api.AbstractOpenApiResource [http-nio-8080-exec-6] Init duration for springdoc-openapi is: 126 ms
+2022-02-26 08:28:07,531 INFO com.service.XmlParserServiceApplication [restartedMain] Starting XmlParserServiceApplication using Java 17.0.1 on WORKSTATION with PID 892 (D:\Projects\xmlparser\XmlParserService\target\classes started by sriram in D:\Projects\xmlparser\XmlParserService)
+2022-02-26 08:28:07,531 DEBUG com.service.XmlParserServiceApplication [restartedMain] Running with Spring Boot v2.6.3, Spring v5.3.15
+2022-02-26 08:28:07,531 INFO com.service.XmlParserServiceApplication [restartedMain] No active profile set, falling back to default profiles: default
+2022-02-26 08:28:08,487 INFO org.apache.catalina.core.StandardService [restartedMain] Starting service [Tomcat]
+2022-02-26 08:28:08,487 INFO org.apache.catalina.core.StandardEngine [restartedMain] Starting Servlet engine: [Apache Tomcat/9.0.56]
+2022-02-26 08:28:08,539 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [restartedMain] Initializing Spring embedded WebApplicationContext
+2022-02-26 08:28:09,390 INFO com.service.XmlParserServiceApplication [restartedMain] Started XmlParserServiceApplication in 2.177 seconds (JVM running for 2.922)
+2022-02-26 08:28:24,161 INFO com.service.XmlParserServiceApplication [restartedMain] Starting XmlParserServiceApplication using Java 17.0.1 on WORKSTATION with PID 8164 (D:\Projects\xmlparser\XmlParserService\target\classes started by sriram in D:\Projects\xmlparser\XmlParserService)
+2022-02-26 08:28:24,162 DEBUG com.service.XmlParserServiceApplication [restartedMain] Running with Spring Boot v2.6.3, Spring v5.3.15
+2022-02-26 08:28:24,162 INFO com.service.XmlParserServiceApplication [restartedMain] No active profile set, falling back to default profiles: default
+2022-02-26 08:28:25,114 INFO org.apache.catalina.core.StandardService [restartedMain] Starting service [Tomcat]
+2022-02-26 08:28:25,114 INFO org.apache.catalina.core.StandardEngine [restartedMain] Starting Servlet engine: [Apache Tomcat/9.0.56]
+2022-02-26 08:28:25,165 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [restartedMain] Initializing Spring embedded WebApplicationContext
+2022-02-26 08:29:00,480 INFO com.service.XmlParserServiceApplication [restartedMain] Started XmlParserServiceApplication in 36.656 seconds (JVM running for 37.428)
+2022-02-26 08:34:57,523 INFO com.service.XmlParserServiceApplication [restartedMain] Starting XmlParserServiceApplication using Java 17.0.1 on WORKSTATION with PID 11016 (D:\Projects\xmlparser\XmlParserService\target\classes started by sriram in D:\Projects\xmlparser\XmlParserService)
+2022-02-26 08:34:57,524 DEBUG com.service.XmlParserServiceApplication [restartedMain] Running with Spring Boot v2.6.3, Spring v5.3.15
+2022-02-26 08:34:57,524 INFO com.service.XmlParserServiceApplication [restartedMain] No active profile set, falling back to default profiles: default
+2022-02-26 08:34:58,470 INFO org.apache.catalina.core.StandardService [restartedMain] Starting service [Tomcat]
+2022-02-26 08:34:58,470 INFO org.apache.catalina.core.StandardEngine [restartedMain] Starting Servlet engine: [Apache Tomcat/9.0.56]
+2022-02-26 08:34:58,521 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [restartedMain] Initializing Spring embedded WebApplicationContext
+2022-02-26 08:35:15,374 INFO com.service.XmlParserServiceApplication [restartedMain] Started XmlParserServiceApplication in 18.195 seconds (JVM running for 18.947)
