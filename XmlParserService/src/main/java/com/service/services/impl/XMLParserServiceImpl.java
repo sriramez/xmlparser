@@ -18,6 +18,7 @@ import org.xml.sax.SAXException;
 
 import com.service.exception.XmlRemoveEmployeeException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.service.constants.XMLParserConstants;
 import com.service.exception.XmlAddExployeeException;
 import com.service.exception.XmlReadException;
 import com.service.exception.XmlValidationException;
@@ -48,7 +49,6 @@ public class XMLParserServiceImpl implements XmlParserService {
 	@Autowired
 	XMLParser parser;
 
-	private static final String APP_KEY = "xmlparser";
 
 	private static final Logger logger = LoggerFactory.getLogger(XMLParserServiceImpl.class);
 
@@ -64,7 +64,7 @@ public class XMLParserServiceImpl implements XmlParserService {
 			logger.debug("XMl validation failed");
 			throw new XmlValidationException();
 		}
-		redis.opsForHash().put(APP_KEY, key, output);
+		redis.opsForHash().put(XMLParserConstants.APP_KEY, key, output);
 		return output;
 	}
 
@@ -75,7 +75,7 @@ public class XMLParserServiceImpl implements XmlParserService {
 
 	public String addElements(String key, String contents)
 			throws XmlValidationException, XmlAddExployeeException, XmlValidatorNotPresentException {
-		String xmlContents = (String) redis.opsForHash().get(APP_KEY, key);
+		String xmlContents = (String) redis.opsForHash().get(XMLParserConstants.APP_KEY, key);
 
 		if (!getValidator(key).validateContents(contents)) {
 			throw new XmlValidationException();
@@ -83,7 +83,7 @@ public class XMLParserServiceImpl implements XmlParserService {
 		String output = null;
 		try {
 			output = parser.AddNewElementToXml(xmlContents, contents);
-			redis.opsForHash().put(APP_KEY, key, output);
+			redis.opsForHash().put(XMLParserConstants.APP_KEY, key, output);
 		} catch (ParserConfigurationException | SAXException | IOException | TransformerException e) {
 			throw new XmlAddExployeeException();
 		}
@@ -92,11 +92,11 @@ public class XMLParserServiceImpl implements XmlParserService {
 	}
 
 	public String removeElements(String param, String value, String key) throws XmlRemoveEmployeeException {
-		String xmlContents = (String) redis.opsForHash().get(APP_KEY, key);
+		String xmlContents = (String) redis.opsForHash().get(XMLParserConstants.APP_KEY, key);
 		String output = null;
 		try {
 			output = parser.removeAnElementBasedOnParam(param, value, xmlContents);
-			redis.opsForHash().put(APP_KEY, key, output);
+			redis.opsForHash().put(XMLParserConstants.APP_KEY, key, output);
 		} catch (ParserConfigurationException | SAXException | IOException | TransformerException e) {
 			e.printStackTrace();
 			throw new XmlRemoveEmployeeException();
@@ -105,7 +105,7 @@ public class XMLParserServiceImpl implements XmlParserService {
 	}
 
 	public String getOutputFile(String key) throws XmlWriteException {
-		String xmlContents = (String) redis.opsForHash().get(APP_KEY, key);
+		String xmlContents = (String) redis.opsForHash().get(XMLParserConstants.APP_KEY, key);
 		try {
 			parser.writeContentToFile(service.getOutputPath(key) + File.separator + "output.xml", xmlContents);
 		} catch (IOException e) {
@@ -120,9 +120,9 @@ public class XMLParserServiceImpl implements XmlParserService {
 		String validatorContents = "";
 		try {
 			validatorContents = FileUtils.readFileToString(new File(absolutePath), StandardCharsets.UTF_8);
-			redis.opsForHash().put(APP_KEY, key + "_validator", validatorContents);
+			redis.opsForHash().put(XMLParserConstants.APP_VALILDATOR_KEY, key + "_validator", validatorContents);
 			;
-			redis.convertAndSend("validators",
+			redis.convertAndSend(XMLParserConstants.VALIDATORS,
 					mapper.writeValueAsString(new RedisMessageModel(key, validatorContents)));
 		} catch (IOException e) {
 			throw new XmlValidationException();
@@ -142,9 +142,9 @@ public class XMLParserServiceImpl implements XmlParserService {
 			throws XmlRemoveEmployeeException {
 		String output = "";
 		try {
-			String xmlContents = (String) redis.opsForHash().get(APP_KEY, key);
+			String xmlContents = (String) redis.opsForHash().get(XMLParserConstants.APP_KEY, key);
 			output = parser.removeAnElementBasedOnCondition(value, xmlContents, lowerbound, upperbound);
-			redis.opsForHash().put(APP_KEY, key, output);
+			redis.opsForHash().put(XMLParserConstants.APP_KEY, key, output);
 		} catch (ParserConfigurationException | SAXException | IOException | TransformerException e) {
 			throw new XmlRemoveEmployeeException();
 		}

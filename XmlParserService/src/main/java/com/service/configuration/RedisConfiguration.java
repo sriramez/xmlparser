@@ -16,6 +16,7 @@ import org.springframework.data.redis.serializer.GenericToStringSerializer;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.service.constants.XMLParserConstants;
 import com.service.model.RedisMessageModel;
 
 import xmlparser.XMLValidator;
@@ -48,14 +49,14 @@ public class RedisConfiguration {
 
 		RedisMessageListenerContainer container = new RedisMessageListenerContainer();
 		container.setConnectionFactory(connectionFactory);
-		container.addMessageListener(listenerAdapter, new PatternTopic("validators"));
+		container.addMessageListener(listenerAdapter, new PatternTopic(XMLParserConstants.VALIDATORS));
 
 		return container;
 	}
 
 	@Bean
 	MessageListenerAdapter listenerAdapter(RedisReceiver receiver) {
-		return new MessageListenerAdapter(receiver, "receiveMessage");
+		return new MessageListenerAdapter(receiver, XMLParserConstants.LISTENER_METHOD);
 	}
 
 	@Bean
